@@ -26,12 +26,13 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias zshconfig="vim ~/.zshrc" 
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias wttr="clear && curl wttr.in"
-# Docker
-alias dstop="docker stop $(docker ps -a -q)"
 # Git
 alias gmji="gitmoji -c"
 alias gls="git branch -l | cat"
 # Growth Constant
 alias gc="cd ~/Documents/gc"
 alias gcvd="cd ~/Documents/gc/virtual-dash"
+alias gcbi="cd ~/Documents/gc/build-it"
 alias rvd="docker-compose -f ./docker/docker-compose.yml run --service-ports -d --rm web && docker-compose -f ./docker/docker-compose.yml run --service-ports -d --rm worker"
+alias upbi="docker-compose -f ~/Documents/gc/build-it/docker/docker-compose.yml --env-file ~/Documents/gc/build-it/.env up -d"
+alias downbi="docker-compose -f ~/Documents/gc/build-it/docker/docker-compose.yml --env-file ~/Documents/gc/build-it/.env down"
