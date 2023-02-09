@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Personal
+## Misc
+alias \
+	zshconfig="nvim ~/.zshrc" \
+	ohmyzsh="nvim ~/.oh-my-zsh" \
+	wttr="clear && curl wttr.in" \
+	morning="~/Documents/scripts/personal/morning.sh.command" \
+
+## Git
+alias \
+	gmji="gitmoji -c" \
+	gls="git branch -l | cat" \
+
+## Work
+alias \
+	gc="cd ~/Documents/gc" \
+	gcbi="cd ~/Documents/gc/build-it" \
+	upbi="~/Documents/gc/upbi.sh" \
+	downbi="~/Documents/gc/downbi.sh" \
+	bilog="docker logs -f build_it_web" \
+	biex="docker exec -it build_it_web /bin/bash" \
+
+# Found on the internet
+## Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
