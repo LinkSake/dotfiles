@@ -17,8 +17,10 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-#Oh My ZSH
+# Oh My ZSH
 source $ZSH/oh-my-zsh.sh
+# asdf :wq
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
