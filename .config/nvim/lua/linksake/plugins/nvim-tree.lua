@@ -9,25 +9,14 @@ vim.g.loaded_netrwPlugin = 1
 
 nvimtree.setup({
   hijack_cursor = true,
-  git = {
-    enable = false
-  },
   view = {
-    width = '25',
+    width = '300',
     side = 'right'
   },
   renderer = {
     add_trailing = true,
     group_empty = true,
     highlight_opened_files = 'name',
-    icons = {
-      show = {
-        file = false,
-        folder = false,
-        folder_arrow = false,
-        git = false
-      }
-    },
     special_files = {
       'Cargo.toml',
       'Makefile',

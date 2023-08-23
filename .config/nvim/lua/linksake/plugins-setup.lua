@@ -43,10 +43,41 @@ return packer.startup(function(user)
   use('numToStr/Comment.nvim')
 
   -- file explorer / tree
-  use('nvim-tree/nvim-tree.lua')
+  use{
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons',
+    } 
+  }
 
   -- status line
   use('nvim-lualine/lualine.nvim')
+
+  -- lsp config for elixir-ls support
+  use ('neovim/nvim-lspconfig')
+
+  -- cmp framework for auto-completion support
+  use ('hrsh7th/nvim-cmp')
+
+  -- install different completion source
+  use ('hrsh7th/cmp-nvim-lsp')
+  use ('hrsh7th/cmp-buffer')
+  use ('hrsh7th/cmp-path')
+  use ('hrsh7th/cmp-cmdline')
+
+  -- you need a snippet engine for snippet support
+  -- here I'm using vsnip which can load snippets in vscode format
+  use ('hrsh7th/vim-vsnip')
+  use ('hrsh7th/cmp-vsnip')
+
+  -- treesitter for syntax highlighting and more
+  use ('nvim-treesitter/nvim-treesitter')
+
+  -- colorscheme
+  use {
+    'nobbmaestro/nvim-andromeda',
+    requires = { 'tjdevries/colorbuddy.nvim', branch = 'dev' }
+  } 
 
   if packer_bootstrap then
     require('packer').sync()

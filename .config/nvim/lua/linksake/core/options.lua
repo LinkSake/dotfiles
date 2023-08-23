@@ -14,7 +14,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- appearance
--- opt.termguicolors = true
+opt.termguicolors = true
 opt.background = 'dark'
 opt.signcolumn = 'yes'
 

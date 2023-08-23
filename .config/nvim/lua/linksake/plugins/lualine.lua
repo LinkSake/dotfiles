@@ -3,11 +3,15 @@ if not status then
   return
 end
 
+local andromeda_lualine = require('andromeda.plugins.lualine')
+
 lualine.setup({
   options = {
-    icons_enabled = false,
-    theme = 'wombat',
-    section_separators = '', 
+    icons_enabled = true,
+    theme = andromeda_lualine.theme,
+    section_separators = '',
     component_separators = '',
   },
+    sections = andromeda_lualine.sections,
+    inactive_sections = andromeda_lualine.inactive_sections,
 })
