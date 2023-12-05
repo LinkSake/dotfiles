@@ -14,6 +14,9 @@ alias \
 	gls="git branch -l | cat" \
 
 ## Work
+alias \
+  dpi="cd ~/Documents/dpi" \
+  updpi="cd ~/Documents/dpi && direnv allow . && ulimit -n 2048 && code . && iex -S mix phx.server"
 
 # Found on the internet
 ## Use neovim for vim if present.

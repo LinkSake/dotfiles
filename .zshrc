@@ -19,8 +19,17 @@ plugins=(
 
 # Oh My ZSH
 source $ZSH/oh-my-zsh.sh
-# asdf :wq
+
+# Binaries & Other executables
+## Work (macOS)
+### asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+### direnv
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+### Postgresql
+export PATH=/opt/homebrew/Cellar/postgresql@13/13.12/bin:$PATH
+## ElixirLS
+export PATH=$PATH:$HOME/.elixir-ls/release
 
 # Manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
