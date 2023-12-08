@@ -1,0 +1,17 @@
+theme = "ayu_mirage"
+
+[editor]
+auto-save = true
+
+[editor.statusline]
+left =  ["mode", "spinner", "file-base-name", "read-only-indicator", "file-modification-indicator"]
+right = ["file-type", "diagnostics", "selections", "register", "position", "file-encoding"]
+mode.normal = "[N]"
+mode.insert = "[I]"
+mode.select = "[V]"
+
+[editor.indent-guides]
+render = true
+character = "·"
+skip-levels = 1
+
