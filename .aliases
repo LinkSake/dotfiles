@@ -3,10 +3,13 @@
 # Personal
 ## Misc
 alias \
-	zshconfig="nvim ~/.zshrc" \
-	ohmyzsh="nvim ~/.oh-my-zsh" \
+	zshconfig="$EDITOR ~/.zshrc" \
+	ohmyzsh="$EDITOR ~/.oh-my-zsh" \
 	wttr="clear && curl wttr.in" \
 	morning="~/Documents/scripts/personal/morning.sh.command" \
+	todo="$EDITOR ~/Documents/.todo.md" \
+	aliases="$EDITOR ~/Documents/dotfiles/.aliases" \	
+	dotfiles="$EDITOR ~/Documents/dotfiles"
 
 ## Git
 alias \
@@ -16,7 +19,7 @@ alias \
 ## Work
 alias \
   dpi="cd ~/Documents/dpi" \
-  updpi="cd ~/Documents/dpi && direnv allow . && ulimit -n 2048 && code . && iex -S mix phx.server"
+  updpi="cd ~/Documents/dpi && direnv allow . && ulimit -n 2048 && iex -S mix phx.server"
 
 # Found on the internet
 ## Use neovim for vim if present.

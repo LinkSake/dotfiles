@@ -1,5 +1,8 @@
 ## Luis Angel Ortega's (@LinkSake) ZSH/OhMyZSH config file ##
 
+## Editor
+export EDITOR=hx
+
 # Path to oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export DOTFILES=$HOME/Documents/dotfiles
