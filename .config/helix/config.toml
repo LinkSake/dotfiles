@@ -1,9 +1,10 @@
-theme = "ayu_dark"
+theme = "ayu_mirage"
 
 [editor]
 auto-save = true
 shell = ["zsh", "-c"]
-bufferline = "multiple"
+true-color = true
+# bufferline = "multiple"
 
 [editor.statusline]
 left =  ["mode", "spinner", "file-base-name", "read-only-indicator", "file-modification-indicator"]
@@ -31,3 +32,6 @@ hidden = false
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
+C-s = ":w" # Save files with ctrl+s
+"tab" = "goto_next_function" # Select and jump to the next function via Treesitter
+"S-tab" = "goto_prev_function" # Select and jump to the previous function via Treesitter

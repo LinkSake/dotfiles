@@ -1,0 +1,166 @@
+
+# Syntax highlighting
+# -------------------
+"type" = "#05bc79"  # color2
+
+"constructor" = "#0fa8cd"  # color6
+
+"constant" = "#cd3131"  # color1
+"constant.builtin" = "#cd3131"  # color1
+"constant.character" = "#05bc79"  # color2
+"constant.character.escape" = "#bc3fbc"  # color5
+
+"string" = "#05bc79"  # color2
+"string.regexp" = "#cd3131"  # color1
+"string.special" = "#2472c8"  # color4
+
+"comment" = { fg = "#666666", modifiers = ["italic"] }  # color8
+
+"variable" = "#e5e5e5"  # color7
+"variable.parameter" = { fg = "#0fa8cd", modifiers = ["italic"] }  # color6
+"variable.builtin" = "#cd3131"  # color1
+"variable.other.member" = "#05bc79"  # color2
+
+"label" = "#0fa8cd"  # color6
+
+"punctuation" = "#666666"  # color8
+"punctuation.special" = "#0fa8cd"  # color6
+
+"keyword" = "#cd3131"  # color1
+"keyword.control.conditional" = { fg = "#cd3131", modifiers = ["italic"] }  # color1
+
+"operator" = "#0fa8cd"  # color6
+
+"function" = "#2472c8"  # color4
+"function.macro" = "#cd3131"  # color1
+
+"tag" = "#cd3131"  # color1
+"attribute" = "#2472c8"  # color4
+
+"namespace" = { fg = "#2472c8", modifiers = ["italic"] }  # color4
+
+"special" = "#2472c8"  # color4
+
+"markup.heading.marker" = { fg = "#cd3131", modifiers = ["bold"] }  # color1
+"markup.heading.1" = "#2472c8"  # color4
+"markup.heading.2" = "#cd3131"  # color1
+"markup.heading.3" = "#05bc79"  # color2
+"markup.heading.4" = "#e5e512"  # color3
+"markup.heading.5" = "#bc3fbc"  # color5
+"markup.heading.6" = "#05bc79"  # color2
+"markup.list" = "#cd3131"  # color1
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "#2472c8", modifiers = ["italic", "underlined"] }  # color4
+"markup.link.text" = "#2472c8"  # color4
+"markup.raw" = "#cd3131"  # color1
+
+"diff.plus" = "#05bc79"  # color2
+"diff.minus" = "#cd3131"  # color1
+"diff.delta" = "#2472c8"  # color4
+
+# User Interface
+# --------------
+"ui.background" = { fg = "#e5e5e5", bg = "#262a33" }  # foreground, background
+
+"ui.linenr" = { fg = "#666666" }  # color8
+"ui.linenr.selected" = { fg = "#e5e5e5" }  # color7
+
+"ui.statusline" = { fg = "#666666", bg = "#262a33" }  # color8, background
+"ui.statusline.inactive" = { fg = "#666666", bg = "#262a33" }  # color8, background
+"ui.statusline.normal" = { fg = "#e5e5e5", bg = "#2472c8", modifiers = ["bold"] }  # color7, color4
+"ui.statusline.insert" = { fg = "#e5e5e5", bg = "#05bc79", modifiers = ["bold"] }  # color7, color2
+"ui.statusline.select" = { fg = "#e5e5e5", bg = "#cd3131", modifiers = ["bold"] }  # color7, color1
+
+"ui.popup" = { fg = "#e5e5e5", bg = "#666666" }  # color7, color8
+"ui.window" = { fg = "#666666" }  # color8
+"ui.help" = { fg = "#666666", bg = "#666666" }  # color8
+
+"ui.bufferline" = { fg = "#666666", bg = "#262a33" }  # color8, background
+"ui.bufferline.active" = { fg = "#cd3131", bg = "#e5e5e5", underline = { color = "#cd3131", style = "line" } }  # color1, color7
+"ui.bufferline.background" = { bg = "#666666" }  # color8
+
+"ui.text" = "#e5e5e5"  # color7
+"ui.text.focus" = { fg = "#e5e5e5", bg = "#666666", modifiers = ["bold"] }  # color7, color8
+"ui.text.inactive" = { fg = "#666666" }  # color8
+
+"ui.virtual" = "#666666"  # color8
+"ui.virtual.ruler" = { bg = "#666666" }  # color8
+"ui.virtual.indent-guide" = "#666666"  # color8
+"ui.virtual.inlay-hint" = { fg = "#666666", bg = "#262a33" }  # color8, background
+
+"ui.selection" = { bg = "#e5e5e5" }  # color7
+
+"ui.cursor" = { fg = "#262a33", bg = "#f8f8f0" }  # background, cursor
+"ui.cursor.primary" = { fg = "#262a33", bg = "#e5e5e5" }  # background, color7
+"ui.cursor.match" = { fg = "#cd3131", modifiers = ["bold"] }  # color1
+
+"ui.cursor.primary.normal" = { fg = "#262a33", bg = "#2472c8" }  # background, color4
+"ui.cursor.primary.insert" = { fg = "#262a33", bg = "#05bc79" }  # background, color2
+"ui.cursor.primary.select" = { fg = "#262a33", bg = "#cd3131" }  # background, color1
+
+"ui.cursor.normal" = { fg = "#262a33", bg = "#f8f8f0" }  # background, cursor
+"ui.cursor.insert" = { fg = "#262a33", bg = "#f8f8f0" }  # background, cursor
+"ui.cursor.select" = { fg = "#262a33", bg = "#f8f8f0" }  # background, cursor
+
+"ui.cursorline.primary" = { bg = "#666666" }  # color8
+
+"ui.highlight" = { bg = "#e5e5e5", modifiers = ["bold"] }  # color7
+
+"ui.menu" = { fg = "#666666", bg = "#262a33" }  # color8, background
+"ui.menu.selected" = { fg = "#e5e5e5", bg = "#666666", modifiers = ["bold"] }  # color7, color8
+
+"diagnostic.error" = { underline = { color = "#cd3131", style = "curl" } }  # color1
+"diagnostic.warning" = { underline = { color = "#e5e512", style = "curl" } }  # color3
+"diagnostic.info" = { underline = { color = "#0fa8cd", style = "curl" } }  # color6
+"diagnostic.hint" = { underline = { color = "#05bc79", style = "curl" } }  # color2
+
+error = "#cd3131"  # color1
+warning = "#e5e512"  # color3
+info = "#0fa8cd"  # color6
+hint = "#05bc79"  # color2
+
+[palette]
+# Andromeda palette colors
+black = "#000000"
+bright_red = "#cd3131"
+green = "#05bc79"
+yellow = "#e5e512"
+blue = "#2472c8"
+magenta = "#bc3fbc"
+cyan = "#0fa8cd"
+white = "#e5e5e5"
+gray = "#666666"
+red = "#cd3131"
+bright_green = "#05bc79"
+bright_yellow = "#e5e512"
+bright_blue = "#2472c8"
+bright_magenta = "#bc3fbc"
+bright_cyan = "#0fa8cd"
+bright_white = "#e5e5e5"
+background = "#262a33"
+selection_foreground = "#262a33"
+cursor = "#f8f8f0"
+foreground = "#e5e5e5"
+selection_background = "#e5e5e5"
+
+# Additional derived colors (if needed)
+text = "#e5e5e5"
+subtext1 = "#cd3131"
+subtext0 = "#05bc79"
+overlay2 = "#666666"
+overlay1 = "#bc3fbc"
+overlay0 = "#0fa8cd"
+surface2 = "#e5e512"
+surface1 = "#2472c8"
+surface0 = "#e5e5e5"
+
+base = "#262a33"
+mantle = "#202328"
+crust = "#1c1e24"
+
+# derived colors by blending existing palette colors
+cursorline = "#3b3f52"  # Blended color for cursor line
+secondary_cursor = "#b8a5a6"  # Blended color for secondary cursor
+secondary_cursor_normal = "#9193be"  # Blended color for normal secondary cursor
+secondary_cursor_insert = "#83a275"  # Blended color for insert mode secondary cursor

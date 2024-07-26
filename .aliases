@@ -15,6 +15,7 @@ alias \
 alias \
 	gmji="gitmoji -c" \
 	gls="git branch -l | cat" \
+	gro="git reset HEAD~1"
 
 ## Work
 alias \
