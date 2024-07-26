@@ -32,16 +32,6 @@ let g:netrw_banner=0
 let g:netrw_winsize=20
 let g:netrw_liststyle=3
 
-"Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
-
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-rails'
-Plug 'machakann/vim-sandwich'
-
-" Initialize plugin system
-call plug#end()
-
 " Get current branch
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
