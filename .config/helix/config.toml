@@ -4,7 +4,7 @@ theme = "ayu_mirage"
 auto-save = true
 shell = ["zsh", "-c"]
 true-color = true
-# bufferline = "multiple"
+bufferline = "multiple"
 
 [editor.statusline]
 left =  ["mode", "spinner", "file-base-name", "read-only-indicator", "file-modification-indicator"]
@@ -33,5 +33,8 @@ hidden = false
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
 C-s = ":w" # Save files with ctrl+s
+C-t = ":n"
+C-right = "goto_next_buffer" # Move to next buffer with ctrl plus right arrow
+C-left = "goto_previous_buffer" # Move to previous buffer with ctrl plus right arrow
 "tab" = "goto_next_function" # Select and jump to the next function via Treesitter
 "S-tab" = "goto_prev_function" # Select and jump to the previous function via Treesitter
