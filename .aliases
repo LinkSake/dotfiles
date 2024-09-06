@@ -6,25 +6,28 @@ alias \
 	zshconfig="$EDITOR ~/.zshrc" \
 	ohmyzsh="$EDITOR ~/.oh-my-zsh" \
 	wttr="clear && curl wttr.in" \
-	morning="~/Documents/scripts/personal/morning.sh.command" \
+	morning="~/Code/scripts/personal/morning.sh.command" \
 	todo="$EDITOR ~/Documents/.todo.md" \
-	aliases="$EDITOR ~/Documents/dotfiles/.aliases" \	
-	dotfiles="$EDITOR ~/Documents/dotfiles"
+	aliases="$EDITOR ~/Code/dotfiles/.aliases" \	
+	dotfiles="$EDITOR ~/Code/dotfiles"
 
 ## Git
 alias \
 	gmji="gitmoji -c" \
-	gls="git branch -l | cat" \
-	gro="git reset HEAD~1"
+	gls="git branch -l | cat"
+
+gre () {
+	n=${1:1}
+	git reset HEAD~$n
+}
 
 ## Work
 alias \
-  dpi="cd ~/Documents/dpi" \
-  updpi="cd ~/Documents/dpi && direnv allow . && ulimit -n 2048 && iex -S mix phx.server"
-
-# Found on the internet
-## Use neovim for vim if present.
-[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+  dpi="cd ~/Code/dpi" \
+  da="direnv allow ." \
+  ul="ulimit -n 5048" \
+  es="iex -S mix phx.server" \
+  updpi="dpi && da && ul && es"
 
 # Depricated
 ## Work
