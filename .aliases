@@ -21,13 +21,21 @@ gre () {
 	git reset HEAD~$n
 }
 
+## asdf
+alias \
+	aftl="cat .tools-version" \
+	afi="asdf install" \
+	afls="asdf list"
+
 ## Work
 alias \
   dpi="cd ~/Code/dpi" \
   da="direnv allow ." \
   ul="ulimit -n 5048" \
   es="iex -S mix phx.server" \
-  updpi="dpi && da && ul && es"
+  updpi="dpi && da && ul && es" \
+  erlangunset="unset CC && unset LDFLAGS && unset KERL_CONFIGURE_OPTIONS" \
+  erlangset="export CC='/usr/bin/clang -I$(brew --prefix unixodbc)/include' && export LDFLAGS=-L$(brew --prefix unixodbc)/lib && export KERL_CONFIGURE_OPTIONS='--with-ssl=$(brew --prefix openssl) --with-odbc=$(brew --prefix unixodbc) --disable-hipe --without-wx --disable-jit'"
 
 # Depricated
 ## Work
