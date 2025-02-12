@@ -18,19 +18,18 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
+    asdf
 )
 
 # Oh My ZSH
 source $ZSH/oh-my-zsh.sh
 
 # Binaries & Other executables
-## Work (macOS)
-### asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+## macOS
 ### direnv
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
-### Postgresql
-export PATH=/opt/homebrew/Cellar/postgresql@13/13.12/bin:$PATH
+### psql
+export PATH=/opt/homebrew/opt/postgresql@14/bin:$PATH
 ## ElixirLS
 export PATH=$PATH:$HOME/.elixir-ls/release
 
