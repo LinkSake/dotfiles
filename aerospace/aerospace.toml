@@ -1,0 +1,197 @@
+# ~/.config/aerospace/aerospace.toml
+# Reference: https://nikitabobko.github.io/AeroSpace/guide
+# Optimized for: Keychron K15 Max (Alice layout), Helix, Zen, Windsurf, kitty
+
+config-version = 2
+
+start-at-login = true
+
+# Normalizations — highly recommended, eliminates weird tree states
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# Mouse follows focus — great on Alice layout since you're already hands-on-keyboard
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# Prevent cmd-h from hiding apps and confusing AeroSpace
+automatically-unhide-macos-hidden-apps = true
+
+# Minimal persistent workspaces — only what you actually use
+# 1=webdev  2=comms  3=browser  9=music
+persistent-workspaces = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+# ---------------------------------------------------------------------------
+# Gaps
+# ---------------------------------------------------------------------------
+[gaps]
+    inner.horizontal = 8
+    inner.vertical   = 8
+    outer.left       = 8
+    outer.bottom     = 8
+    outer.top        = 8
+    outer.right      = 8
+
+# ---------------------------------------------------------------------------
+# App rules
+# webdev stack on workspace 1: kitty + Windsurf + Zen
+# comms on workspace 2: Slack + Teams + Outlook
+# music on workspace 9, out of the way
+# Finder always floats
+# ---------------------------------------------------------------------------
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'kitty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Windsurf'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-name-regex-substring = '^Zen$'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Slack'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Microsoft Teams'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Microsoft Outlook'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Spotify'
+run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'System Settings'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Calculator'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Archive Utility'
+run = 'layout floating'
+
+# ---------------------------------------------------------------------------
+# Key mapping
+# ---------------------------------------------------------------------------
+[key-mapping]
+    preset = 'qwerty'
+
+# ---------------------------------------------------------------------------
+# Main bindings
+#
+# Alice layout ergonomics:
+# - Left hand controls all modifiers (ctrl, alt, cmd) — sits naturally angled
+# - Right hand handles hjkl and numbers — sits comfortably on home row
+# - Multi-modifier chords (ctrl-alt, cmd-ctrl) are left-hand-only, so the
+#   right hand lands cleanly on the target key with no awkward reaches
+#
+# Modifier strategy (conflict-free across Helix, Zen, Windsurf, kitty):
+# - ctrl-alt-hjkl    → focus/move (safe: none of your apps use this)
+# - alt-ctrl-1..9    → workspace switch (avoids Zen's plain alt-1..9)
+# - cmd-ctrl-1..3    → layout scripts (completely free across all apps)
+# ---------------------------------------------------------------------------
+[mode.main.binding]
+
+    # --- Open new kitty window on current workspace ---
+    alt-enter = 'exec-and-forget open -n /Applications/kitty.app'
+
+    # --- Focus — right hand on hjkl, left hand holds ctrl-alt
+    #     Wrap-around so you never get stuck at an edge ---
+    ctrl-alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
+    ctrl-alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
+    ctrl-alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
+    ctrl-alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
+
+    # --- Move windows — same hand pattern, add shift ---
+    ctrl-alt-shift-h = 'move left'
+    ctrl-alt-shift-j = 'move down'
+    ctrl-alt-shift-k = 'move up'
+    ctrl-alt-shift-l = 'move right'
+
+    # --- Resize — alt-minus/equal, natural on Alice's right number row ---
+    alt-minus = 'resize smart -50'
+    alt-equal = 'resize smart +50'
+
+    # --- Layout toggles ---
+    alt-slash = 'layout tiles horizontal vertical'     # toggle split orientation
+    alt-comma = 'layout accordion horizontal vertical' # toggle accordion
+
+    # --- Fullscreen ---
+    alt-f = 'fullscreen'
+
+    # --- Float toggle ---
+    alt-shift-space = 'layout floating tiling'
+
+    # --- Back and forth between last two workspaces ---
+    alt-tab = 'workspace-back-and-forth'
+
+    # --- Move workspace to next monitor ---
+    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+    # --- Workspace switching ---
+    # alt-ctrl-number: left thumb on alt, left pinky on ctrl, right hand on number
+    # Very comfortable on Alice since the number row sits close to the right home row
+    alt-ctrl-1 = 'workspace 1'
+    alt-ctrl-2 = 'workspace 2'
+    alt-ctrl-3 = 'workspace 3'
+    alt-ctrl-4 = 'workspace 4'
+    alt-ctrl-5 = 'workspace 5'
+    alt-ctrl-6 = 'workspace 6'
+    alt-ctrl-7 = 'workspace 7'
+    alt-ctrl-8 = 'workspace 8'
+    alt-ctrl-9 = 'workspace 9'
+
+    # --- Move window to workspace ---
+    alt-ctrl-shift-1 = 'move-node-to-workspace 1'
+    alt-ctrl-shift-2 = 'move-node-to-workspace 2'
+    alt-ctrl-shift-3 = 'move-node-to-workspace 3'
+    alt-ctrl-shift-4 = 'move-node-to-workspace 4'
+    alt-ctrl-shift-5 = 'move-node-to-workspace 5'
+    alt-ctrl-shift-6 = 'move-node-to-workspace 6'
+    alt-ctrl-shift-7 = 'move-node-to-workspace 7'
+    alt-ctrl-shift-8 = 'move-node-to-workspace 8'
+    alt-ctrl-shift-9 = 'move-node-to-workspace 9'
+
+    # --- Layout scripts ---
+    # cmd-ctrl: left cmd + left ctrl, right hand hits 1/2/3 on the number row
+    # Completely free across Helix, Zen, Windsurf, and kitty
+    cmd-ctrl-1 = 'exec-and-forget ~/.config/aerospace/layout-work.sh'      # Slack | Teams+Outlook
+    cmd-ctrl-2 = 'exec-and-forget ~/.config/aerospace/layout-dev.sh half'  # kitty | Zen 50/50
+    cmd-ctrl-3 = 'exec-and-forget ~/.config/aerospace/layout-dev.sh third' # kitty 1/3 | Zen 2/3
+
+    # --- Service mode ---
+    alt-shift-semicolon = 'mode service'
+
+# ---------------------------------------------------------------------------
+# Service mode — for layout surgery
+# Enter with alt-shift-; then use plain keys, exit with esc
+# ---------------------------------------------------------------------------
+[mode.service.binding]
+    esc       = ['reload-config', 'mode main']
+    r         = ['flatten-workspace-tree', 'mode main'] # nuke layout, start fresh
+    f         = ['layout floating tiling', 'mode main'] # toggle float on focused window
+    backspace = ['close-all-windows-but-current', 'mode main']
+
+    # Manual joins — useful when auto-layout scripts aren't enough
+    alt-shift-h = ['join-with left',  'mode main']
+    alt-shift-j = ['join-with down',  'mode main']
+    alt-shift-k = ['join-with up',    'mode main']
+    alt-shift-l = ['join-with right', 'mode main']

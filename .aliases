@@ -9,7 +9,8 @@ alias \
 	morning="~/Code/scripts/personal/morning.sh.command" \
 	todo="$EDITOR ~/Documents/.todo.md" \
 	aliases="$EDITOR ~/Code/dotfiles/.aliases" \	
-	dotfiles="$EDITOR ~/Code/dotfiles"
+	dotfiles="$EDITOR ~/Code/dotfiles" \
+	update="brew update && brew upgrade"
 
 ## Git
 alias \
@@ -34,6 +35,9 @@ alias \
   ul="ulimit -n 5048" \
   es="iex -S mix phx.server" \
   updpi="dpi && da && ul && es" \
+  ws="windsurf ."\
+  env="$EDITOR .envrc"\
+  oc="opencode ."
   erlangunset="unset CC && unset LDFLAGS && unset KERL_CONFIGURE_OPTIONS" \
   erlangset="export CC='/usr/bin/clang -I$(brew --prefix unixodbc)/include' && export LDFLAGS=-L$(brew --prefix unixodbc)/lib && export KERL_CONFIGURE_OPTIONS='--with-ssl=$(brew --prefix openssl) --with-odbc=$(brew --prefix unixodbc) --disable-hipe --without-wx --disable-jit'"
 
